@@ -503,6 +503,7 @@ class Converter < ::Prawn::Document
   end
 
   def convert_quote_or_verse node
+    layout_caption node.title if node.title?
     add_dest_for_block node if node.id
     border_width = @theme.blockquote_border_width
     theme_margin :block, :top
